@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@bg-dev/nuxt-naiveui",
     "@sidebase/nuxt-auth",
+    "@vite-pwa/nuxt",
   ],
   auth: {
     provider: { type: "authjs", defaultProvider: "github", trustHost: false },
