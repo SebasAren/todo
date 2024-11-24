@@ -1,0 +1,6 @@
+model Todo {
+  id String @id @default(uuid())
+  userEmail String
+  completedDate DateTime?
+  description String
+}
