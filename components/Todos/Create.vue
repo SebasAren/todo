@@ -1,12 +1,10 @@
 <template>
-  <n-flex>
-    <n-input
-      v-model:value="newTodo"
-      type="text"
-      placeholder="New todo"
-      @keydown.enter="sumbit"
-    ></n-input>
-  </n-flex>
+  <n-input
+    v-model:value="newTodo"
+    type="text"
+    placeholder="New todo"
+    @keydown.enter="sumbit"
+  ></n-input>
 </template>
 
 <script setup lang="ts">
