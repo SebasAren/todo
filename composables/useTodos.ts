@@ -5,6 +5,7 @@ type RouterOutput = inferRouterOutputs<AppRouter>;
 export type Todo = RouterOutput["getTodos"][number];
 
 export const useTodos = () => {
+  // composable for managing the todos and the connection with the backend
   const { $client } = useNuxtApp();
   const { data: todos, refresh: refreshTodos } = $client.getTodos.useQuery();
   const completedTodos = computed<Todo[]>(() => {

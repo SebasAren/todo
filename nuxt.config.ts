@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     "@bg-dev/nuxt-naiveui",
     "@sidebase/nuxt-auth",
     "@vite-pwa/nuxt",
+    "@nuxt/test-utils/module",
   ],
   auth: {
     provider: { type: "authjs", defaultProvider: "github", trustHost: false },
@@ -18,5 +19,10 @@ export default defineNuxtConfig({
   },
   typescript: {
     shim: false,
+  },
+  app: {
+    head: {
+      title: "Todo App",
+    },
   },
 });

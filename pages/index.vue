@@ -1,13 +1,10 @@
 <template>
-  <todos-create></todos-create>
-  <todos-list></todos-list>
+  <div>
+    <todos-create></todos-create>
+    <div class="flex justify-center items-center">
+      <div class="flex-1">
+        <todos-list></todos-list>
+      </div>
+    </div>
+  </div>
 </template>
-
-<script setup lang="ts">
-const newTodo = ref("");
-const { createTodo } = useTodos();
-const sumbit = () => {
-  createTodo(newTodo.value);
-  newTodo.value = "";
-};
-</script>
