@@ -12,4 +12,14 @@ De authorisatie gaat eigenlijk automatisch met de nuxt-auth (gebaseerd op next-a
 ### tests
 Ik heb uiteindelijk geen tests geschreven. Voor de frontend hoefde dit niet, maar de backend wel. Het probleem is alleen dat de backend bijna geen echte "units" heeft. De 3 endpoints zijn puur crud via sql en bevatten geen logica.
 
-Er gebeurt in de "composables" in de frontend wel iets wat testbaar is. Namelijk de flow van het creeeren van todos. Ik liep hier alleen direct tegen een vaker terugkerend probleem met nuxt. Doordat het auto-imports heeft is het extreem hinderlijk om bepaalde functies te mocken. In dit geval was de $client van `useNuxtApp()`
+Er gebeurt in de "composables" in de frontend wel iets wat testbaar is. Namelijk de flow van het creeeren van todos. Ik liep hier alleen direct tegen een vaker terugkerend probleem met nuxt. Doordat het auto-imports heeft is het extreem hinderlijk om bepaalde functies te mocken. In dit geval was de `$client` van `useNuxtApp()` bijzonder hinderlijk te mocken. Dit is wel te doen, maar niet in 4 uur.
+
+### layout
+Ik heb spijt van de keuze voor NaiveUI. Ik dacht toen ik dit koos dat er veel betere tailwind integratie was, maar dat viel vies tegen. Het resultaat is nu dat de app niet mooi scaled naar grotere schermen en er eigenlijk alleen redelijk uitziet op kleine schermen.
+
+### extra's
+Ik heb de app gehost op todo.arendsen.dev via een docker-based setup op een VPS. Heb niet de tijd gevonden om dit via een CI/CD pipeline te doen.
+
+De app is een volledige pwa
+
+Tijd bezig is op basis van git commit timestamps.
