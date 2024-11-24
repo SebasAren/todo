@@ -6,10 +6,10 @@
   >
     <n-grid :cols="2">
       <n-gi>
-        <n-statistic label="To do" value="125" />
+        <n-statistic label="To do" :value="openTodos.length" />
       </n-gi>
       <n-gi>
-        <n-statistic label="Finished" value="22" />
+        <n-statistic label="Finished" :value="completedTodos.length" />
       </n-gi>
     </n-grid>
     <template #title> Todo App </template>
@@ -26,10 +26,14 @@
       <n-button v-else @click="signOut()">Logout</n-button>
     </template>
   </n-page-header>
-  <slot />
+  <div v-if="status === 'authenticated'">
+    <slot />
+  </div>
+  <div v-else>You must be logged in to use this application.</div>
 </template>
 
 <script setup lang="ts">
 const { back } = useRouter();
 const { signIn, signOut, status } = useAuth();
+const { completedTodos, openTodos } = useTodos();
 </script>
