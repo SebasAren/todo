@@ -6,3 +6,10 @@ Als framework heb ik gekozen voor nuxt 3 (sidebase.io starter). Reden hiervoor i
 
 Verder kwam deze setup met prisma, trpc en tailwind en NaiveUI. Het leek mij leuk te kijken hoe naiveUI werkt, maar daar kreeg ik redelijk snel spijt van. NaiveUI werkt niet heel fijn samen met tailwind en het probleem ontstond dat ik eigenlijk de naive components zelf moest aanpassen of lange tijd zoeken in de documentatie (die zeer pover is). Volgende keer zou ik gewoon weer puur tailwind gebruiken, met bijvoorbeeld daisyUI.
 
+### auth
+De authorisatie gaat eigenlijk automatisch met de nuxt-auth (gebaseerd op next-auth). Ik heb gekozen voor github als Oauth, omdat dat mij hier de meest voor de hand liggende is. Deze gegevens worden niet direct opgeslagen in de database, maar alleen het email wordt opgeslagen bij de todos als identificatie.
+
+### tests
+Ik heb uiteindelijk geen tests geschreven. Voor de frontend hoefde dit niet, maar de backend wel. Het probleem is alleen dat de backend bijna geen echte "units" heeft. De 3 endpoints zijn puur crud via sql en bevatten geen logica.
+
+Er gebeurt in de "composables" in de frontend wel iets wat testbaar is. Namelijk de flow van het creeeren van todos. Ik liep hier alleen direct tegen een vaker terugkerend probleem met nuxt. Doordat het auto-imports heeft is het extreem hinderlijk om bepaalde functies te mocken. In dit geval was de $client van `useNuxtApp()`
